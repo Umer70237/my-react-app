@@ -6,30 +6,7 @@ import './App.css'
 
 function App(){
   const[chatMessages, setChatMessages] = useState([
-    {
-    Message:"hello",
-    sender:"user",
-    id:"1"
-
-  },
-  {
-    Message:"Hello! How can I help you?",
-    sender:"robot",
-    id:"2"
-
-  },
-  {
-    Message:"can you get me todays date?",
-    sender:"user",
-    id:"3"
-
-  },
-  {
-    Message:"Today is September 27",
-    sender:"robot",
-    id:"4"
-
-  },
+    
 
 ])
 
