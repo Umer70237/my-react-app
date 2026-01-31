@@ -1,0 +1,320 @@
+function App(){
+  return(
+    (<>
+    
+    <p>Hello, welcome to my website</p>
+
+    <LoginForm/>
+    
+    </>
+    )
+  )
+}
+
+function LoginForm(){
+  return(
+<>
+
+<div>
+      <input type="text" placeholder="Email" />
+      </div>
+      <div>
+    <input type="password" placeholder="Password"/>
+    </div>
+    
+    <button>Login</button>
+    <button>Sign up</button>
+  
+</>
+
+  )
+    
+}
+
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+function ProductDetails({item,price,discountPrice,imageSrc}){
+
+  // if(item=="Cotton socks"){
+  //   if(!discountPrice){
+  //     return(
+  //       <>
+  //        {item}<br/>
+  //       Price: {price}<br/>
+        
+  //       </>
+  //     )
+  //   }
+  //   else{
+
+  //   return(
+  //       <>
+  //      {item}<br/>
+  //       <del>Price: {price}</del><br/>
+  //       {discountPrice}<br/>
+        
+  //       </>
+  //     )
+
+  // }
+ 
+  // } 
+
+  return(
+    
+    <>
+<img src= {imageSrc} width={90} />    
+
+
+
+
+
+
+    {item == "Cotton socks" && (
+    <>
+
+       {item}
+      <br/><br/>
+
+
+
+      {!discountPrice ? (
+       <p>Price:{price}</p> 
+        
+        
+      ) :(
+        <>
+        <del>Price:{price}</del><br/><br/>
+        {discountPrice}<br/><br/>
+</>
+      )
+
+
+      }
+
+</>
+      )}
+
+
+
+
+
+       {item == "Tennis balls" && (
+    <>
+      {item}
+      <br/>
+
+
+      {!discountPrice ? (
+       <p>Price:{price}</p> 
+        
+        
+      ) :(
+        <>
+        <del>Price:{price}</del><br/><br/>
+        {discountPrice}<br/><br/>
+</>
+      )
+
+
+      }
+
+</>
+      )}
+
+
+
+
+
+
+
+       {item == "Plain T-Shirt" && (
+    <>
+      {item}
+      <br/><br/>
+
+
+      {!discountPrice ? (
+       <p>Price:{price}</p> 
+        
+        
+      ) :(
+        <>
+        <del>Price:{price}</del><br/><br/>
+        {discountPrice}<br/><br/>
+</>
+      )
+
+
+      }
+
+</>
+      )}
+
+      <button>Add to Cart</button><br/><br/>
+
+
+</>
+
+
+    )
+  }
+function App(){
+  return(
+    <>
+  <ProductDetails item = "Cotton socks" price ="$10.90"  discountPrice="DiscountPrice:500"  imageSrc="robot.jpg"/>
+  <ProductDetails item = "Tennis balls" price ="$6.00" imageSrc="user.png" />
+  <ProductDetails item = "Plain T-Shirt" price ="$7.99"  imageSrc="robot.jpg"/>
+    </>
+  )}
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+
+ function Display({count,setCount}){
+  
+  
+return(
+    <>
+ <button
+ onClick={()=>{
+  setCount(count+1)
+ }}
+ >Clicked {count} time {count !==1? 's':''}</button>
+
+
+</>
+ )
+
+ 
+  }
+
+  function Reset({count,setCount}){
+    return(
+<button onClick={()=>{
+  setCount(0)
+}}>Reset</button>
+)
+  }
+ 
+
+  
+  
+
+function App(){
+
+  const [count,setCount] = React.useState(0);
+  return(
+<>
+    <Display 
+   count={count}
+   setCount={setCount}
+    
+  /><br/><br/>
+
+  <Display
+
+  count={count}
+   setCount={setCount}
+  />
+
+  <Reset 
+  count={count}
+   setCount={setCount}
+  />
+
+
+
+
+
+</>)}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+
+function InputText(event){
+
+  const[inputtext,setInputText]=React.useState("");
+
+
+  setInputText(event.target.value);
+
+  return(
+    <p>{inputtext}</p>
+  )
+
+}
+
+function InputField(){
+  return(
+  <input type="text" onChange={InputText} />
+  )
+}
+
+
+function App(){
+  return(
+    <>
+  
+  <InputField/>
+    
+    </>
+  )
+}
+
+export default App;
